@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- TELA 1: CONFIGURAÇÃO E CONEXÃO -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutConfiguracao"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <!-- Logos das Instituições -->
+        <ImageView
+            android:id="@+id/logoIfsp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Logo do IFSP"
+            android:src="@drawable/logoifsp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/logoUsp"
+            app:layout_constraintHorizontal_chainStyle="spread" />
+
+        <ImageView
+            android:id="@+id/logoUsp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Logo da USP"
+            android:src="@drawable/logoifmaker"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/logoIfsp"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <Button
+            android:id="@+id/btnConectar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Conectar ao Biorreator"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/logoIfsp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvStatusConexao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Status: Desconectado"
+            app:layout_constraintTop_toBottomOf="@id/btnConectar"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- Seção de Parâmetros -->
+        <TextView
+            android:id="@+id/labelParametros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parâmetros do Ciclo"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStatusConexao"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- Temperatura -->
+        <TextView
+            android:id="@+id/labelTemp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Temperatura Co-cultura (°C):"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/labelParametros"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/etTemperatura"/>
+
+        <EditText
+            android:id="@+id/etTemperatura"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:inputType="numberDecimal"
+            android:text="30.0"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelTemp"/>
+
+        <!-- Tempo Ciclo -->
+        <TextView
+            android:id="@+id/labelTempo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tempo Ciclo (horas):"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/labelTemp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/etTempoCiclo"/>
+
+        <EditText
+            android:id="@+id/etTempoCiclo"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:inputType="number"
+            android:text="1"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelTempo"/>
+
+        <!-- Volume Refil -->
+        <TextView
+            android:id="@+id/labelRefil"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Volume Refil (mL):"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/labelTempo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/etVolumeRefil"/>
+
+        <EditText
+            android:id="@+id/etVolumeRefil"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:inputType="number"
+            android:text="450"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelRefil"/>
+
+        <!-- Volume Extração -->
+        <TextView
+            android:id="@+id/labelExtracao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Volume Extração (%):"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/labelRefil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/etVolumeExtracao"/>
+
+        <EditText
+            android:id="@+id/etVolumeExtracao"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:inputType="number"
+            android:text="90"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/labelExtracao"/>
+
+        <!-- Botões de Ação -->
+        <Button
+            android:id="@+id/btnIniciarCiclo"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="INICIAR CICLO"
+            android:textSize="18sp"
+            android:enabled="false"
+            app:layout_constraintBottom_toTopOf="@id/btnAbrirMonitor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnAbrirMonitor"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="Abrir Monitor"
+            android:textSize="18sp"
+            android:enabled="false"
+            style="?android:attr/buttonBarButtonStyle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
