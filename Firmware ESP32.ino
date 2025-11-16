@@ -161,7 +161,7 @@ void handleBluetooth() {
         String volExtracaoStr = btBuffer.substring(btBuffer.indexOf(';', 6)+1, btBuffer.indexOf(';', 8));
         
         tempSetpoint = tempStr.toFloat();
-        tempoCicloTotalMs = tempoCicloStr.toInt() * 3600000UL; // Converte horas para ms
+        tempoCicloTotalMs = tempoCicloStr.toFloat() * 3600000UL; // Converte horas para ms
         volumeRefilMl = volRefilStr.toFloat();
         volumeExtracaoPercent = volExtracaoStr.toFloat();
 
