@@ -1,7 +1,7 @@
 # Guia de Montagem — Biorreator Automatizado (ESP32)
 
 > [!IMPORTANT]
-> **Regra Obrigatória (Terra Comum):** Antes de energizar o sistema, conecte o **GND da fonte 12V** a um pino **GND do ESP32**. Sem essa referência comum, os sinais de controle dos relés não funcionarão corretamente.
+> **Regra Obrigatória (Terra Comum):** Antes de energizar o sistema, conecte o **GND da fonte** a um pino **GND do ESP32**. Sem essa referência comum, os sinais de controle dos relés não funcionarão corretamente.
 
 ---
 
@@ -37,9 +37,6 @@
 ---
 
 ## 3. Módulo SSR e Resistências (Aquecimento 110V)
-
-> [!WARNING]
-> **Segurança em Alta Tensão (110V):** Faça toda a fiação das resistências com o cabo de força fora da tomada. Isole 100% das emendas e terminais metálicos antes de ligar na rede elétrica.
 
 ### A) Controle (ESP32 -> Módulo SSR)
 * **`3V3` (ESP32)** -> **`DC+`** (SSR)
