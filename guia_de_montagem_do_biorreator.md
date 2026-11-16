@@ -1,6 +1,6 @@
 # Guia de Montagem — Biorreator Automatizado (ESP32)
 
-> [!IMPORTANT]
+> [!IMPORTANTE]
 > **Regra Obrigatória (Terra Comum):** Antes de energizar o sistema, conecte o **GND da fonte** a um pino **GND do ESP32**. Sem essa referência comum, os sinais de controle dos relés não funcionarão corretamente.
 
 ---
